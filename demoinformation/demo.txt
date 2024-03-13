@@ -1,0 +1,50 @@
+Database:
+job_listing
+username:Harshavardhan
+password:Harshavardhan
+
+
+Adding Ip address:
+goto : network access -> add Ipaddress-> allow ip address from anywhere
+
+connecting to mongodb:
+Database->connect->mongodb->copy url->
+url:mongodb+srv://<username>:<password>@joblisting.qbcyze4.mongodb.net/
+
+open mongoDb: edit the username and password of url and then connect.
+
+to pass json object through req.body-> app.use(express.json());
+
+
+generate token:
+npm i jsonwebtoken
+
+const token=jwt.sign(payload,secretkey)
+const user={
+id:100,
+name:'harsha'
+}
+payload:{id:user.id}-->unique data to identify a user credentials.
+
+Generating Token:
+
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWMwY2NjMmIwMjY4ZDEwMjFlNzg0ZSIsImlhdCI6MTcxMDA0NTk5Nn0.i-iC5RLwN2z5v_5-IPKOfAvk8-LA6SXgP3dlKbhk0ZI
+
+To verify token with existing id:
+jwt.io: paste the token , we get matching user id in payload.
+
+using params:
+"/details/:jobid"->:paramsname indicates its a dynamic value and it can change
+we can access it by req.params.jobid
+
+put: to edit the user data/update data
+
+patch:to toggle ex.like and unlike, subscribe and unsubscribe 
+
+to apply filter and search all jpobs:
+// {},// 1st field filter(no filter applied)
+            // react js developer
+            // Js developer
+            // backend JS developer
+            // JS,jS,Js-substring match(regex)and option-i=:ignore cases
+            // {title:title},
